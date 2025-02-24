@@ -2,7 +2,16 @@ name: Automated_tests
 
 
 on:
-  push
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: Choose target
+        required: true
+        default:
+        type: choice
+        options:
+          - login_page
+          - product_page
 
 jobs:
   tests:
@@ -22,5 +31,9 @@ jobs:
         run: pip install -r requirements.txt
       - name: Install playwright
         run: playwright install
-      - name: Run Tests
-        run: pytest
+      - name: Tests for login page
+        if: "github.event.inputs.deployment_target == 'login_page'"
+        run: python -m pytest tests/test_login_page.py
+      - name: Tests for Product page
+        if: "github.event.inputs.deployment_target == 'product_page'"
+        run: python -m pytest tests/test_product_page.py

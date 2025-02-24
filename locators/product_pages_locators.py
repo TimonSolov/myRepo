@@ -1,1 +1,6 @@
 PRODUCT_TILE_LOCATOR = "//div[@class='inventory_list']/div"
+BURGER_LOCATOR = "//button[@id='react-burger-menu-btn']"
+BURGER_ALL_ITEMS_LOCATOR = "//a[@id='inventory_sidebar_link']"
+BURGER_ABOUT_LOCATOR = "//a[@id='about_sidebar_link']"
+BURGER_LOGOUT_LOCATOR = "//a[@id='logout_sidebar_link']"
+BURGER_RESET_APP_STATE = "//a[@id='reset_sidebar_link']"
