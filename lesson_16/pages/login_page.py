@@ -1,5 +1,5 @@
-from saucedemo_test.pages.base_page import BasePage
-from saucedemo_test.locators.main_page_locators import *
+from myRepo.lesson_16.pages.base_page import BasePage
+from myRepo.lesson_16.locators.main_pages_locators import *
 
 
 class LoginPage(BasePage):

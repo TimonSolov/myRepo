@@ -1,13 +1,13 @@
 import pytest
 from playwright.sync_api import sync_playwright
 
-from saucedemo_test.locators.main_page_locators import ERROR_MESSAGE
-from saucedemo_test.pages.login_page import LoginPage
+from myRepo.lesson_16.locators.main_pages_locators import ERROR_MESSAGE
+from myRepo.lesson_16.pages.login_page import LoginPage
 
 
 def browser():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         yield browser
         browser.close()
 

@@ -1,1 +1,9 @@
 name: Automated_tests
+
+
+on:
+  push
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest

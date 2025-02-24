@@ -1,5 +1,5 @@
-from lesson_16.locators.product_page_locators import PRODUCT_TILE_LOCATOR
-from lesson_16.pages.products_page import ProductPage
+from myRepo.lesson_16.locators.product_pages_locators import PRODUCT_TILE_LOCATOR
+from myRepo.lesson_16.pages.product_page import ProductPage
 
 
 class TestLoginPage:
