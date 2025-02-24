@@ -1,12 +1,15 @@
-from pages.product_page import ProductPage
+import allure
 
 
+@allure.feature('login_page')
 class TestLoginPage:
 
+    @allure.story('Test for auth')
     def test_hp(self, login_page):
         login_page.login(username="standard_user", password="secret_sauce")
         assert login_page.is_visible(locator="//span[@class='title']")
 
+    @allure.story('Login test')
     def test_login_error_message(self, login_page):
         login_page.login(username="incorrect_username", password="incorrect_password")
         expected_error_message_text = "Epic sadface: Username is required"

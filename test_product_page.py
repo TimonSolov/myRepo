@@ -12,8 +12,8 @@ class TestProductPage:
         product_tiles = ProductPage(page)
         assert product_tiles.find_product_tiles() == 6, f"Returned {product_tiles.find_product_tiles()} product tile(s)"
 
-    def test_burger_menu_items(self, product_page, page):
-        product_page.login(username="standard_user", password="secret_sauce")
+    def test_burger_menu_items(self, page, login_page):
+        login_page.login(username="standard_user", password="secret_sauce")
         product_page = ProductPage(page)
         product_page.click_burger()
         assert product_page.find_all_items(), f'Not found'
