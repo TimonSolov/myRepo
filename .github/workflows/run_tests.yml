@@ -1,0 +1,24 @@
+name: Automated_tests
+
+
+on:
+  push
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+      - name: Download Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: install Chrome
+        run: sudo apt-get install google-chrome-stable
+      - name: install Modules from requirements.txt
+        run: pip install -r requirements.txt
+      - name: Run Tests
+        run: pytest
